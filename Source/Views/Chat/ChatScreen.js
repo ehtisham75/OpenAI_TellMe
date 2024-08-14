@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, TextInput } from 'react-native';
-import { GiftedChat, Send, SystemMessage, InputToolbar, Bubble } from 'react-native-gifted-chat';
+// import { GiftedChat, Send, SystemMessage, InputToolbar, Bubble } from 'react-native-gifted-chat';
 import ImageCropPicker from 'react-native-image-crop-picker';
 import { Colors } from '../../Assets/Color/Colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -87,28 +87,33 @@ const ChatScreen = () => {
         );
     };
 
-    const handleChooseImage = () => {
-        ImageCropPicker.openPicker({
-            mediaType: 'photo',
-            compressImageMaxWidth: 1000,
-            compressImageMaxHeight: 1000,
-            cropping: true,
-        }).then((image) => {
-            const imageMessage = {
-                _id: Math.round(Math.random() * 1000000),
-                text: '',
-                createdAt: new Date(),
-                user: {
-                    _id: 1,
-                },
-                image: image.path,
-            };
+    // const handleChooseImage = () => {
+    //     ImageCropPicker.openPicker({
+    //         mediaType: 'photo',
+    //         compressImageMaxWidth: 1000,
+    //         compressImageMaxHeight: 1000,
+    //         cropping: true,
+    //     }).then((image) => {
+    //         const imageMessage = {
+    //             _id: Math.round(Math.random() * 1000000),
+    //             text: '',
+    //             createdAt: new Date(),
+    //             user: {
+    //                 _id: 1,
+    //             },
+    //             image: image.path,
+    //         };
 
-            setMessages((prevMessages) => GiftedChat.append(prevMessages, [imageMessage]));
-        }).catch((error) => {
-            console.log('ImagePicker Error: ', error);
-        });
-    };
+    //         setMessages((prevMessages) => GiftedChat.append(prevMessages, [imageMessage]));
+    //     }).catch((error) => {
+    //         console.log('ImagePicker Error: ', error);
+    //     });
+    // };
+
+
+
+
+
 
     // const renderSendIcon = (props) => {
     //     const { text, onSend } = props;
@@ -211,22 +216,26 @@ const ChatScreen = () => {
         }
     };
 
-    const saveMessages = async (newMessages) => {
-        try {
-            const updatedMessages = GiftedChat.append(messages, newMessages);
-            setMessages(updatedMessages);
-            await AsyncStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
-        } catch (error) {
-            console.log('Error saving chat messages:', error);
-        }
-    };
+    // const saveMessages = async (newMessages) => {
+    //     try {
+    //         const updatedMessages = GiftedChat.append(messages, newMessages);
+    //         setMessages(updatedMessages);
+    //         await AsyncStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
+    //     } catch (error) {
+    //         console.log('Error saving chat messages:', error);
+    //     }
+    // };
 
     return (
         <View style={{
             flex: 1,
             paddingBottom:vs(5)
         }}>
-            <GiftedChat
+
+
+
+            
+            {/* <GiftedChat
                 messages={messages}
                 onSend={handleSend}
                 user={{ _id: 1, name: 'User', }}
@@ -237,7 +246,7 @@ const ChatScreen = () => {
                 text={text}
                 onInputTextChanged={(newText) => setText(newText)}
 
-            />
+            /> */}
         </View>
     )
 }

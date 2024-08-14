@@ -1,6 +1,6 @@
 import { View, Text, StatusBar } from 'react-native'
 import React from 'react'
-import { Colors } from '../../Assets/Color/Colors'
+import { Colors } from '../Assets/Color/Colors'
 
 const SetStatusBar = () => {
     return (

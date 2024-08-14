@@ -117,7 +117,8 @@ const LoginScreen = () => {
                             activeOpacity={0.5}
                             onPress={() => { togglePasswordVisibility() }}
                             style={styles.passwordIcon}>
-                            <Ionicons name={showPassword ? "eye-off" : "eye"} size={20} color={Colors.SECONDARY_COLOR} />
+                                <Text>{showPassword ? "eye-off" : "eye"}</Text>
+                            {/* <Ionicons name={showPassword ? "eye-off" : "eye"} size={20} color={Colors.SECONDARY_COLOR} /> */}
                         </TouchableOpacity>
                     </View>
 

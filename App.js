@@ -9,6 +9,7 @@ import Home from './Source/Views/Location/Home';
 import LoginScreen from './Source/Views/Auth/LoginScreen';
 import RegisterScreen from './Source/Views/Auth/RegisterScreen';
 import TopTabs from './Source/Views/TopTabBar/TopTabs';
+import HomeScreen from './Source/Views/Home/HomeScreen';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="TopTabs" component={TopTabs} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
         {/* <Stack.Screen name="Home" component={Home} /> */}
         {/* <Stack.Screen name="BottamTab" component={BottamTab} /> */}
 

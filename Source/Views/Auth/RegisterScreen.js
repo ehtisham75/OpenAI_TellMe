@@ -164,7 +164,8 @@ const RegisterScreen = () => {
                             activeOpacity={0.5}
                             onPress={() => { togglePasswordVisibility() }}
                             style={styles.passwordIcon}>
-                            <Ionicons name={showPassword ? "eye-off" : "eye"} size={20} color={Colors.PRIMARY_COLOR} />
+                                <Text>{showPassword ? "eye-off" : "eye"}</Text>
+                            {/* <Ionicons name={showPassword ? "eye-off" : "eye"} size={20} color={Colors.PRIMARY_COLOR} /> */}
                         </TouchableOpacity>
                     </View>
 
